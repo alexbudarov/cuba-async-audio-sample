@@ -1,6 +1,6 @@
 # cuba-async-audio-sample
 
-Demonstrates how you can download a file with Spring MVC @Async annotation and embed it into web page.
+Demonstrates how you can download an audio file with Spring MVC StreamingResponseBody and embed it into web page.
 
 See:
 - AudioController.java
