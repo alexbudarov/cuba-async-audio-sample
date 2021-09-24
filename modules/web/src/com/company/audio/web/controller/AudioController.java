@@ -22,7 +22,7 @@ import java.util.Objects;
 public class AudioController {
 
     @GetMapping("/audio")
-    @Async
+    //@Async
     public ResponseEntity<StreamingResponseBody> downloadAudio(@RequestParam("name") String fileName) throws IOException {
         int fileSize;
         try (InputStream inputStream = getInputStream(fileName)) {
