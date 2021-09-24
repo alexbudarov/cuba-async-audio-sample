@@ -8,6 +8,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
 
@@ -22,8 +23,7 @@ public class AudioController {
 
     @GetMapping("/audio")
     @Async
-    public ResponseEntity<StreamingResponseBody> downloadAudio() throws IOException {
-        String fileName = "preamble10.wav";
+    public ResponseEntity<StreamingResponseBody> downloadAudio(@RequestParam("name") String fileName) throws IOException {
         int fileSize;
         try (InputStream inputStream = getInputStream(fileName)) {
             ByteArrayOutputStream fullFile = new ByteArrayOutputStream();
